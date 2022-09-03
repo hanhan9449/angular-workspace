@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { VendorsComponent } from './vendors.component';
+import {MatButtonModule} from '@angular/material/button'
 
 
 
@@ -8,9 +9,11 @@ import { VendorsComponent } from './vendors.component';
     VendorsComponent
   ],
   imports: [
+    MatButtonModule
   ],
   exports: [
-    VendorsComponent
+    VendorsComponent,
+    MatButtonModule
   ]
 })
 export class VendorsModule { }
