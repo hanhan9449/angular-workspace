@@ -10,6 +10,9 @@ import { QrCodeComponent } from './qr-code.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    QrCodeComponent
   ]
 })
 export class QrCodeModule { }
