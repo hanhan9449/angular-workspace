@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { collection, getDocs } from 'firebase/firestore';
-import { firestore } from 'projects/shared/src/firebase';
+import { getDownloadURL, ref } from 'firebase/storage';
+import { firestore, storage } from 'projects/shared/src/firebase';
 import { PostInterface } from './post.interface';
 
 @Injectable({
@@ -17,5 +18,9 @@ export class PostService {
       res.push({id: doc.id, ...doc.data()} as unknown as PostInterface)
     })
     return res
+  }
+
+  async getImageUrlByUri(uri: string) {
+    return getDownloadURL(ref(storage, uri))
   }
 }
