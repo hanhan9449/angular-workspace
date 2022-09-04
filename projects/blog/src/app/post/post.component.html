@@ -1,1 +1,6 @@
-<p>post works!</p>
+<h2>文章列表</h2>
+
+<code *ngIf="postList$|async">
+
+{{postList$|async|json}}
+</code>
