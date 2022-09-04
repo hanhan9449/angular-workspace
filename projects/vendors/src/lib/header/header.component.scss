@@ -1,0 +1,16 @@
+.titleBox {
+    display: inline-flex;
+    align-items: baseline;
+}
+.subtitle {
+    transform: scale(.43);
+    transform-origin: left bottom;
+    opacity: .7;
+    margin-left: 4px;
+    height: 1em;
+}
+
+.hide {
+    position: absolute;
+    clip-path: circle(0);
+}

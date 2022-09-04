@@ -1,0 +1,14 @@
+<header>
+    <mat-toolbar color="primary">
+        <div
+            class="titleBox"
+            (mouseleave)="hideSubtitle=true"
+            (mouseenter)="hideSubtitle=false"
+        >
+            <div>{{title}}</div>
+            <div class="subtitle"
+                [hidden]="hideSubtitle"
+            >{{subtitle}}</div>
+        </div>
+    </mat-toolbar>
+</header>
