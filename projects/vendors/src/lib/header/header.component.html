@@ -10,5 +10,15 @@
                 [hidden]="hideSubtitle"
             >{{subtitle}}</div>
         </div>
+        <nav>
+            <ul class="navList">
+                <li *ngFor="let it of navItemList$|async" >
+                    <button mat-button [routerLink]="it.href"  >
+                        {{it.name}}
+                    </button>
+                </li>
+            </ul>
+
+        </nav>
     </mat-toolbar>
 </header>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CONSTANTS } from 'projects/shared/src/constants';
-import { Subject } from 'rxjs';
+import { of, Subject } from 'rxjs';
+import { navItemList } from './nav-item.list.config';
 
 @Component({
   selector: 'lib-header',
@@ -12,6 +13,7 @@ export class HeaderComponent implements OnInit {
   title = CONSTANTS.WEBSITE_TITLE
   subtitle = CONSTANTS.WEBSITE_SUBTITLE
   hideSubtitle = true
+  navItemList$ = of(navItemList)
 
 
   constructor() { }
