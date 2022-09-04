@@ -10,6 +10,7 @@ import {MatListModule} from '@angular/material/list'
 import {MatInputModule} from '@angular/material/input'
 import {MatCheckboxModule} from '@angular/material/checkbox'
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -27,7 +28,8 @@ import { CommonModule } from '@angular/common';
     MatInputModule,
     MatFormFieldModule,
     MatCheckboxModule,
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     VendorsComponent,
