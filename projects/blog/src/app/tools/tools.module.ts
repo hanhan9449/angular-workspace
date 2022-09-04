@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ToolsRoutingModule } from './tools-routing.module';
 import { QrCodeComponent } from './qr-code/qr-code.component';
+import { VendorsModule } from 'projects/vendors/src/public-api';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { QrCodeComponent } from './qr-code/qr-code.component';
   ],
   imports: [
     CommonModule,
-    ToolsRoutingModule
+    ToolsRoutingModule,
+    VendorsModule
   ]
 })
 export class ToolsModule { }

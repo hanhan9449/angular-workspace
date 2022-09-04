@@ -1,2 +1,9 @@
 <h3>二维码工具</h3>
-<h4>二维码生成</h4>
+<section>
+    <h4>二维码生成</h4>
+    <mat-form-field appearance="fill">
+        <mat-label>输入text</mat-label>
+        <textarea #textarea matInput></textarea>
+        <div>{{textarea.value}}</div>
+    </mat-form-field>
+</section>
