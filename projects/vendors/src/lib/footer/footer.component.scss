@@ -1,0 +1,10 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+.footer {
+    height: 30vh;
+    // FIXME: 使用material的主题设置
+    background-color: #3f51b5;
+    color: #fff;
+
+ }
