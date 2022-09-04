@@ -5,6 +5,11 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PageContainerComponent } from './page-container/page-container.component'
 import { MatToolbarModule } from '@angular/material/toolbar'
+import {MatFormFieldModule} from '@angular/material/form-field'
+import {MatListModule} from '@angular/material/list'
+import {MatInputModule} from '@angular/material/input'
+import {MatCheckboxModule} from '@angular/material/checkbox'
+import { CommonModule } from '@angular/common';
 
 
 
@@ -17,7 +22,12 @@ import { MatToolbarModule } from '@angular/material/toolbar'
   ],
   imports: [
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatListModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatCheckboxModule,
+    CommonModule
   ],
   exports: [
     VendorsComponent,
@@ -25,7 +35,12 @@ import { MatToolbarModule } from '@angular/material/toolbar'
     FooterComponent,
     PageContainerComponent,
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatListModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatCheckboxModule,
+    CommonModule
 
   ]
 })
