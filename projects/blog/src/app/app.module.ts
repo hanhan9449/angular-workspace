@@ -13,9 +13,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { providePerformance,getPerformance } from '@angular/fire/performance';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { FirebaseUIModule } from 'firebaseui-angular';
-import { AuthModule } from 'projects/shared/src/public-api';
 import { AngularFireModule, FIREBASE_OPTIONS } from '@angular/fire/compat';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 @NgModule({
   declarations: [
