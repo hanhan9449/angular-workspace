@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { signIn } from 'projects/shared/src/firebase/auth';
 
 @Component({
   selector: 'app-admin',
@@ -13,7 +12,6 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
   }
   signIn() {
-    signIn()
   }
 
 }
