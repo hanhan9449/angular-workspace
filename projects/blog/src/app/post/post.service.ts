@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
+import { Firestore } from '@angular/fire/firestore';
+import { Storage } from '@angular/fire/storage';
 import { collection, getDocs } from 'firebase/firestore';
 import { getDownloadURL, ref } from 'firebase/storage';
-import { firestore, storage } from 'projects/shared/src/firebase';
 import { PostInterface } from './post.interface';
 
 @Injectable({
@@ -9,10 +10,10 @@ import { PostInterface } from './post.interface';
 })
 export class PostService {
 
-  constructor() { }
+  constructor(public firestore: Firestore, public storage: Storage) { }
 
   async getPostList() {
-    const list = await getDocs(collection(firestore, 'post'))
+    const list = await getDocs(collection(this.firestore, 'post'))
     const res = [] as PostInterface[]
     list.forEach(doc => {
       res.push({id: doc.id, ...doc.data()} as unknown as PostInterface)
@@ -21,6 +22,6 @@ export class PostService {
   }
 
   async getImageUrlByUri(uri: string) {
-    return getDownloadURL(ref(storage, uri))
+    return getDownloadURL(ref(this.storage, uri))
   }
 }
