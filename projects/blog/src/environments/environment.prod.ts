@@ -11,3 +11,5 @@ export const environment = {
   },
   production: true
 };
+
+export * from './firebaseui-config'
