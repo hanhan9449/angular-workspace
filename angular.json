@@ -102,7 +102,10 @@
               "projects/blog/src/styles.scss",
               "node_modules/firebaseui/dist/firebaseui.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/marked/marked.min.js",
+              "node_modules/emoji-toolkit/lib/js/joypixels.min.js"
+            ]
           }
         }
       }

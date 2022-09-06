@@ -7,6 +7,7 @@ import { VendorsModule } from 'projects/vendors/src/public-api';
 import { AuthModule } from '@angular/fire/auth';
 import { EditComponent } from './edit/edit.component';
 import { NewComponent } from './new/new.component';
+import { MarkdownModule } from 'ngx-markdown';
 
 
 
@@ -21,7 +22,8 @@ import { NewComponent } from './new/new.component';
     CommonModule,
     VendorsModule,
     PostRoutingModule,
-    AuthModule
+    AuthModule,
+    MarkdownModule.forRoot()
   ]
 })
 export class PostModule { }

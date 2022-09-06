@@ -1,10 +1,8 @@
-<h2>文章详情</h2>
-<div>
-    <span>当前文章id: </span>
-    <span>{{postId$|async}}</span>
-</div>
-
-<section>
-    <h3>{{(post$|async)?.title}}</h3>
-    <p>{{(post$|async)?.content}}</p>
+<section class="post">
+    <h3 class="post-title">{{(post$|async)?.title}}</h3>
+    <div class="info-panel" *ngIf="post$|async">
+        <div>最后修改时间：{{((post$|async)?.modifiedAt)|date}}</div>
+        <div>作者：{{(post$|async)?.author}}</div>
+    </div>
+    <markdown [data]="(post$|async)?.content"></markdown>
 </section>
