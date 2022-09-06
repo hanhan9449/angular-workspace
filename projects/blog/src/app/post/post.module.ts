@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PostComponent } from './post.component';
 import { PostRoutingModule } from './post-routing.module';
 import { DetailComponent } from './detail/detail.component';
+import { VendorsModule } from 'projects/vendors/src/public-api';
 
 
 
@@ -13,7 +14,8 @@ import { DetailComponent } from './detail/detail.component';
   ],
   imports: [
     CommonModule,
-    PostRoutingModule
+    VendorsModule,
+    PostRoutingModule,
   ]
 })
 export class PostModule { }

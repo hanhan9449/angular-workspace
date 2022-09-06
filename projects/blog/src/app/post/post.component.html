@@ -1,8 +1,10 @@
 <h2>文章列表</h2>
-
-<code *ngIf="postList$|async">
-
-{{postList$|async|json}}
-</code>
+<mat-list>
+    <mat-list-item *ngFor="let post of postList$|async" [routerLink]="['detail', post.id]">
+        <button mat-button>
+            {{post.title}}
+        </button>
+</mat-list-item>
+</mat-list>
 
 <img width="200" height="200" *ngIf="testImageSrc$|async" [src]="testImageSrc$|async" alt="">
