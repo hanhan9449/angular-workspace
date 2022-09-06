@@ -1,4 +1,7 @@
-<h2>文章列表</h2>
+<h2>文章列表
+<button *ngIf="isAdmin$|async" mat-raised-button color="accent" [routerLink]="['new']">新增</button>
+
+</h2>
 <mat-list>
     <mat-list-item *ngFor="let post of postList$|async" [routerLink]="['detail', post.id]">
         <button mat-button>
