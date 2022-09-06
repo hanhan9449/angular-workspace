@@ -1,4 +1,5 @@
 import { Component, ContentChild, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { PostService } from '../post.service';
 
 @Component({
@@ -7,8 +8,9 @@ import { PostService } from '../post.service';
   styleUrls: ['./new.component.scss']
 })
 export class NewComponent implements OnInit {
-  @ContentChild('title') titleEl?: HTMLInputElement
-  @ContentChild('content') contentEl?: HTMLTextAreaElement
+
+  title = new FormControl('')
+  content = new FormControl('')
 
   constructor(private postService: PostService) { }
 
@@ -16,9 +18,7 @@ export class NewComponent implements OnInit {
   }
 
   savePost(): void {
-    const title = this.titleEl?.value!
-    const content = this.contentEl?.value!
-    this.postService.saveNewPost({title: 'test', content: 'test content'})
+    this.postService.saveNewPost({title: this.title.value!, content: this.content.value!})
   }
 
 }

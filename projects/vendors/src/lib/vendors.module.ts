@@ -11,6 +11,7 @@ import {MatInputModule} from '@angular/material/input'
 import {MatCheckboxModule} from '@angular/material/checkbox'
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -29,7 +30,9 @@ import { RouterModule } from '@angular/router';
     MatFormFieldModule,
     MatCheckboxModule,
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     VendorsComponent,
@@ -42,7 +45,9 @@ import { RouterModule } from '@angular/router';
     MatInputModule,
     MatFormFieldModule,
     MatCheckboxModule,
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
 
   ]
 })
