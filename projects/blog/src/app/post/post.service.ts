@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Firestore } from '@angular/fire/firestore';
+import { doc, Firestore, getDoc } from '@angular/fire/firestore';
 import { Storage } from '@angular/fire/storage';
 import { collection, getDocs } from 'firebase/firestore';
 import { getDownloadURL, ref } from 'firebase/storage';
+import { from, of } from 'rxjs';
 import { PostInterface } from './post.interface';
 
 @Injectable({
@@ -23,5 +24,11 @@ export class PostService {
 
   async getImageUrlByUri(uri: string) {
     return getDownloadURL(ref(this.storage, uri))
+  }
+
+  getPostDetail$(postId: string) {
+    const detail = getDoc(doc(this.firestore, 'post', postId)).then(snap => snap.data())
+
+    return from(detail)
   }
 }

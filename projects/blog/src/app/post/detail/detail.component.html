@@ -3,3 +3,8 @@
     <span>当前文章id: </span>
     <span>{{postId$|async}}</span>
 </div>
+
+<section>
+    <h3>{{(post$|async)?.title}}</h3>
+    <p>{{(post$|async)?.content}}</p>
+</section>

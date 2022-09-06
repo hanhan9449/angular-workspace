@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { map, Observable } from 'rxjs';
+import { map, Observable, switchMap } from 'rxjs';
+import { PostService } from '../post.service';
 
 @Component({
   selector: 'app-detail',
@@ -10,13 +11,19 @@ import { map, Observable } from 'rxjs';
 export class DetailComponent implements OnInit {
 
   postId$?: Observable<string>
+  post$?: Observable<any>
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private postService: PostService
   ) { }
 
   ngOnInit(): void {
     this.postId$ = this.route.params.pipe(map(it => it['id']))
+    if (this.postId$) {
+
+    this.post$ = this.postId$.pipe(switchMap(id => this.postService.getPostDetail$(id)))
+    }
   }
 
 }
