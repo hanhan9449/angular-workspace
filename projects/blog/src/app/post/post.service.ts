@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { doc, Firestore, getDoc } from '@angular/fire/firestore';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { addDoc, doc, Firestore, getDoc } from '@angular/fire/firestore';
 import { Storage } from '@angular/fire/storage';
 import { collection, getDocs } from 'firebase/firestore';
 import { getDownloadURL, ref } from 'firebase/storage';
-import { from, of } from 'rxjs';
+import { from, of, take } from 'rxjs';
 import { PostInterface } from './post.interface';
 
 @Injectable({
@@ -11,7 +12,7 @@ import { PostInterface } from './post.interface';
 })
 export class PostService {
 
-  constructor(public firestore: Firestore, public storage: Storage) { }
+  constructor(public firestore: Firestore, public storage: Storage, public afAuth: AngularFireAuth) { }
 
   async getPostList() {
     const list = await getDocs(collection(this.firestore, 'post'))
@@ -30,5 +31,21 @@ export class PostService {
     const detail = getDoc(doc(this.firestore, 'post', postId)).then(snap => snap.data())
 
     return from(detail)
+  }
+
+  saveNewPost(post: Pick<PostInterface, 'content' | 'title'>) {
+    const postDbRef = collection(this.firestore, 'post');
+    this.afAuth.authState.pipe(take(1)).subscribe(info => {
+      console.debug('saveNewPost', info, post)
+      if (!info) {
+        return
+      }
+      (post as PostInterface).author = info.email ?? '';
+      const now = Date.now();
+      (post as PostInterface).createAt = now;
+      (post as PostInterface).modifiedAt = now;
+      addDoc(postDbRef, post)
+
+    })
   }
 }
