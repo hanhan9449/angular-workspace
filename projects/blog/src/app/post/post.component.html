@@ -3,8 +3,10 @@
 
 </h2>
 <mat-list>
-    <mat-list-item *ngFor="let post of postList$|async" [routerLink]="['detail', post.id]">
-        <button mat-button>
+    <mat-list-item *ngFor="let post of postList$|async"  >
+        <button mat-button
+        [routerLink]="['detail', post.id]"
+        >
             {{post.title}}
         </button>
 </mat-list-item>
