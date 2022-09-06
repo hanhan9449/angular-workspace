@@ -1,0 +1,11 @@
+.form {}
+.title {
+    width: 100%;
+}
+.content {
+    width: 100%;
+}
+.button-panel {
+    gap: 8px;
+    display: flex;
+}

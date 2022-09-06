@@ -1,5 +1,6 @@
 import { Component, ContentChild, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { PostInterface } from '../post.interface';
 import { PostService } from '../post.service';
 
 @Component({
@@ -8,9 +9,7 @@ import { PostService } from '../post.service';
   styleUrls: ['./new.component.scss']
 })
 export class NewComponent implements OnInit {
-
-  title = new FormControl('')
-  content = new FormControl('')
+  post: Partial<PostInterface> = {}
 
   constructor(private postService: PostService) { }
 
@@ -18,7 +17,10 @@ export class NewComponent implements OnInit {
   }
 
   savePost(): void {
-    this.postService.saveNewPost({title: this.title.value!, content: this.content.value!})
+    this.postService.saveNewPost(this.post as any)
+    console.debug(this.post)
   }
+
+  cancel():void {}
 
 }

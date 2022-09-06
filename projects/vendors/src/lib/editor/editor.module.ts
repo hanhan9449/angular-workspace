@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EditorComponent } from './editor.component';
+import { VendorsModule } from '../vendors.module';
 
 
 
@@ -9,7 +10,11 @@ import { EditorComponent } from './editor.component';
     EditorComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    VendorsModule
+  ],
+  exports: [
+    EditorComponent
   ]
 })
 export class EditorModule { }

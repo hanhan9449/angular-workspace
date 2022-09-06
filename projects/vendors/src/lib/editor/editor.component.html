@@ -1,1 +1,17 @@
-<p>editor works!</p>
+
+    <form class="form" (submit)="submit.emit()">
+
+    <mat-form-field class="title" appearance="fill">
+        <mat-label>标题</mat-label>
+        <input #title matInput [value]="post?.title ?? ''" (input)="handleInput('title', title.value)">
+    </mat-form-field>
+    <mat-form-field class="content" appearance="fill">
+        <mat-label>内容</mat-label>
+        <textarea #content matInput [value]="post?.content ?? ''" (input)="handleInput('content', content.value)"></textarea>
+    </mat-form-field>
+    <div class="button-panel">
+
+    <button mat-raised-button color="primary" type="submit">保存发布</button>
+    <button mat-raised-button (click)="cancel.emit()">取消</button>
+    </div>
+    </form>

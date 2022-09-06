@@ -1,11 +1,1 @@
-<mat-form-field>
-    <mat-label>标题</mat-label>
-    <input [formControl]="title" matInput type="text">
-</mat-form-field>
-<div></div>
-<mat-form-field>
-    <mat-label>内容</mat-label>
-    <textarea matInput [formControl]="content" [style.width]="400"></textarea>
-</mat-form-field>
-
-<button mat-button (click)="savePost()">保存</button>
+<lib-editor [(post)]="post" (cancel)="cancel()" (submit)="savePost()"></lib-editor>
