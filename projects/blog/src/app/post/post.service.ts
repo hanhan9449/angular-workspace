@@ -4,7 +4,7 @@ import { addDoc, doc, Firestore, getDoc } from '@angular/fire/firestore';
 import { Storage } from '@angular/fire/storage';
 import { collection, getDocs } from 'firebase/firestore';
 import { getDownloadURL, ref } from 'firebase/storage';
-import { from, of, take } from 'rxjs';
+import {from, Observable, of, take} from 'rxjs';
 import { PostInterface } from './post.interface';
 
 @Injectable({
@@ -30,7 +30,7 @@ export class PostService {
   getPostDetail$(postId: string) {
     const detail = getDoc(doc(this.firestore, 'post', postId)).then(snap => snap.data())
 
-    return from(detail)
+    return from(detail) as Observable<PostInterface>
   }
 
   saveNewPost(post: Pick<PostInterface, 'content' | 'title'>) {

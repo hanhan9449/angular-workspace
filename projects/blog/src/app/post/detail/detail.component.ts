@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map, Observable, switchMap } from 'rxjs';
 import { PostService } from '../post.service';
+import {PostInterface} from "../post.interface";
 
 @Component({
   selector: 'app-detail',
@@ -12,7 +13,7 @@ export class DetailComponent implements OnInit {
   title = '文章详情'
 
   postId$?: Observable<string>
-  post$?: Observable<any>
+  post$?: Observable<PostInterface>
 
   constructor(
     private route: ActivatedRoute,

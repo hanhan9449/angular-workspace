@@ -1,11 +1,9 @@
-<section class="post" [libTitle]="[title, (post$|async)?.title]">
-  <ng-container *ngIf="post$|async">
-
-    <h3 class="title" >{{(post$|async)?.title}}</h3>
+<ng-container [libTitle]="[title, (post$|async)?.title]"></ng-container>
+<section class="post" *ngIf="post$|async as post" >
+    <h3 class="title" >{{post.title}}</h3>
     <div class="info-panel">
-        <div>最后修改时间：{{((post$|async)?.modifiedAt)|date}}</div>
-        <div>作者：{{(post$|async)?.author}}</div>
+        <div>最后修改时间：{{post.modifiedAt|date}}</div>
+        <div>作者：{{post.author}}</div>
     </div>
-    <markdown [data]="(post$|async)?.content"></markdown>
-  </ng-container>
+    <markdown [data]="post.content"></markdown>
 </section>
