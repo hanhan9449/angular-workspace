@@ -14,6 +14,7 @@ import { providePerformance,getPerformance } from '@angular/fire/performance';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { FirebaseUIModule } from 'firebaseui-angular';
 import { AngularFireModule, FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { initializeAppCheck, provideAppCheck, ReCaptchaV3Provider } from '@angular/fire/app-check';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,11 @@ import { AngularFireModule, FIREBASE_OPTIONS } from '@angular/fire/compat';
     provideFirestore(() => getFirestore()),
     providePerformance(() => getPerformance()),
     provideStorage(() => getStorage()),
+    provideAppCheck(() => {
+      const provider = new ReCaptchaV3Provider(environment.recaptcha3SiteKey)
+      return initializeAppCheck(undefined, {provider, isTokenAutoRefreshEnabled: true})
+
+    }),
     FirebaseUIModule.forRoot(firebaseUiAuthConfig)
   ],
   providers: [
