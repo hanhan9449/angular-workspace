@@ -25,7 +25,9 @@ export class NewComponent implements OnInit {
   savePost(): void {
     this.postService.saveNewPost(this.post as any)
     console.debug(this.post)
-    this._snackBar.open('保存发布成功')
+    this._snackBar.open('保存发布成功', undefined, {
+      duration: 3000
+    })
     this.router.navigate(['..'], {relativeTo: this.route})
   }
 
