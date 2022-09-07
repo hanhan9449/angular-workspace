@@ -9,6 +9,7 @@ import { PostService } from '../post.service';
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
+  title = '文章详情'
 
   postId$?: Observable<string>
   post$?: Observable<any>

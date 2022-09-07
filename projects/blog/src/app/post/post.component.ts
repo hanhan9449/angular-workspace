@@ -9,6 +9,7 @@ import { PostService } from './post.service';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit {
+  title = '文章'
 
   postList$?: Observable<any[]>
   testImageSrc$?: Observable<string>
@@ -21,7 +22,7 @@ export class PostComponent implements OnInit {
     this.postList$ = from(this.postService.getPostList())
     this.testImageSrc$ = from(this.postService.getImageUrlByUri('D49E1FC8-8E50-4C1C-9529-20C7ABAFAF5B.jpeg'))
     this.isAdmin$ = this.authService.isAdmin$
-    
+
   }
 
 }

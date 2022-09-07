@@ -8,6 +8,7 @@ import { AuthModule } from '@angular/fire/auth';
 import { EditComponent } from './edit/edit.component';
 import { NewComponent } from './new/new.component';
 import { MarkdownModule } from 'ngx-markdown';
+import {SharedModule} from "../../../../shared/src/lib/shared.module";
 
 
 
@@ -24,7 +25,8 @@ import { MarkdownModule } from 'ngx-markdown';
     PostRoutingModule,
     AuthModule,
     MarkdownModule.forRoot(),
-    EditorModule
+    EditorModule,
+    SharedModule
   ]
 })
 export class PostModule { }

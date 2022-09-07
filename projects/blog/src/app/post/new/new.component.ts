@@ -11,6 +11,8 @@ import { PostService } from '../post.service';
   styleUrls: ['./new.component.scss']
 })
 export class NewComponent implements OnInit {
+
+  title = '新建文章'
   post: Partial<PostInterface> = {}
 
   constructor(private postService: PostService,
