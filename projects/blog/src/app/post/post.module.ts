@@ -16,7 +16,7 @@ import { MarkdownModule } from 'ngx-markdown';
     PostComponent,
     DetailComponent,
     EditComponent,
-    NewComponent
+    NewComponent,
   ],
   imports: [
     CommonModule,
