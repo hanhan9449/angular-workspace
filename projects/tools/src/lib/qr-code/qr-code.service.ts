@@ -10,7 +10,7 @@ export class QrCodeService {
   constructor() { }
 
   geneImageFromLocal(text: string): Observable<string> {
-    const res = qrcode.toDataURL(text)
+    const res = qrcode.toDataURL(text, {width: 300, margin: 0, scale: 1})
     return from(res)
   }
 }
