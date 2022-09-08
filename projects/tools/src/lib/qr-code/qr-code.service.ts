@@ -6,4 +6,11 @@ import { Injectable } from '@angular/core';
 export class QrCodeService {
 
   constructor() { }
+
+  geneImageFromLocal(text?: string) {
+    if (!text) {
+      text = ''
+    }
+    return text
+  }
 }
