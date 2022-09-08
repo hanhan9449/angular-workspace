@@ -1,6 +1,4 @@
-
-<img *ngIf="src$|async as src;else fallback" [src]="src" width="300px" height="300px" class="image">
+<img *ngIf="text;else fallback" [src]="src$|async" width="300px" height="300px" class="image">
 <ng-template #fallback>
-
-<p>输入内容</p>
+  <p>输入内容</p>
 </ng-template>
