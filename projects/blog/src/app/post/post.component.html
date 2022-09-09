@@ -4,6 +4,9 @@
 </h2>
 <mat-list>
     <mat-list-item *ngFor="let post of postList$|async"  >
+      <ng-container *ngIf="!post.title"
+                    logMode="warn"
+                    [libDebug]="['post.component.html','miss post.title', post.id]"></ng-container>
         <button mat-button
         [routerLink]="['detail', post.id]"
         >
