@@ -9,7 +9,7 @@ export const updatePostDescription =
     functions.logger.info("before content", bContent);
     functions.logger.info("after content", aContent);
     functions.logger.debug("isEqual", bContent === aContent);
-    if (bContent !== aContent) {
+    if (bContent !== aContent && aContent !== /* 删除 */ undefined) {
       return after.ref.set({description: (aContent ?? "").slice(0, 200)},
           {merge: true});
     }

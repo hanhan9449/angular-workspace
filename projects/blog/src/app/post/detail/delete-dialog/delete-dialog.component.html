@@ -1,0 +1,6 @@
+<h3 mat-dialog-title>确定删除吗？</h3>
+<div mat-dialog-content>你的文章将会被永久删除</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close="">再想想</button>
+  <button mat-button color="warn" [mat-dialog-close]="'delete'">删除</button>
+</div>

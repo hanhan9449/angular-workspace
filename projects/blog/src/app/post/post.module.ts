@@ -9,6 +9,7 @@ import { EditComponent } from './edit/edit.component';
 import { NewComponent } from './new/new.component';
 import { MarkdownModule } from 'ngx-markdown';
 import {SharedModule} from "../../../../shared/src/lib/shared.module";
+import { DeleteDialogComponent } from './detail/delete-dialog/delete-dialog.component';
 
 
 
@@ -18,6 +19,7 @@ import {SharedModule} from "../../../../shared/src/lib/shared.module";
     DetailComponent,
     EditComponent,
     NewComponent,
+    DeleteDialogComponent,
   ],
   imports: [
     CommonModule,

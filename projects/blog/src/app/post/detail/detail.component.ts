@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { map, Observable, switchMap } from 'rxjs';
+import {ActivatedRoute, Router} from '@angular/router';
+import {map, Observable, switchMap, take} from 'rxjs';
 import { PostService } from '../post.service';
 import {PostInterface} from "../post.interface";
 import {AuthService} from "../../../../../shared/src/lib/auth/auth.service";
+import {MatDialog} from "@angular/material/dialog";
+import {DeleteDialogComponent} from "./delete-dialog/delete-dialog.component";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-detail',
@@ -20,7 +23,10 @@ export class DetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private postService: PostService,
-    private authService: AuthService
+    private authService: AuthService,
+    private dialog: MatDialog,
+    private _snackBar: MatSnackBar,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -30,6 +36,24 @@ export class DetailComponent implements OnInit {
 
     this.post$ = this.postId$.pipe(switchMap(id => this.postService.getPostDetail$(id)))
     }
+  }
+  deleteButtonClick(): void {
+    const dialogRef = this.dialog.open(DeleteDialogComponent, {
+      width: '250px'
+    })
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result === 'delete') {
+        this.postId$?.pipe(take(1)).subscribe(id => {
+          this.postService.deletePost(id).then(it => {
+            this._snackBar.open('删除成功', undefined, {
+              duration: 3000
+            })
+            this.router.navigate(['../..'], {relativeTo: this.route})
+          })
+        })
+      }
+    })
+
   }
 
 }

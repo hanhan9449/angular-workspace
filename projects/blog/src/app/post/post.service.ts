@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { addDoc, doc, Firestore, getDoc } from '@angular/fire/firestore';
+import {addDoc, deleteDoc, doc, Firestore, getDoc} from '@angular/fire/firestore';
 import { Storage } from '@angular/fire/storage';
 import { collection, getDocs } from 'firebase/firestore';
 import { getDownloadURL, ref } from 'firebase/storage';
@@ -47,5 +47,8 @@ export class PostService {
       addDoc(postDbRef, post)
 
     })
+  }
+  async deletePost(postId: string) {
+    await deleteDoc(doc(this.firestore, 'post', postId))
   }
 }

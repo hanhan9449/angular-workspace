@@ -9,7 +9,7 @@ import { PostService } from './post.service';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit {
-  title = '文章'
+  title = '文章列表'
 
   postList$?: Observable<any[]>
   testImageSrc$?: Observable<string>

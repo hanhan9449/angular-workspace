@@ -7,7 +7,7 @@ import {toolList} from "./tool-list";
 })
 export class ToolsComponent implements OnInit {
 
-  title = '工具'
+  title = '工具列表'
 
   toolList = toolList
 

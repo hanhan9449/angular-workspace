@@ -1,4 +1,4 @@
-<h2 class="title" [libTitle]="title">工具列表</h2>
+<h2 class="g-title" [libTitle]="title">{{title}}</h2>
 <mat-list>
   <mat-list-item *ngFor="let tool of toolList">
     <button mat-button [routerLink]="tool.routerLink">{{tool.name}}</button>
