@@ -14,10 +14,3 @@
         </button>
 </mat-list-item>
 </mat-list>
-
-<div>
-    <span>是管理员吗？</span>
-    <span>{{isAdmin$|async|json}}</span>
-</div>
-
-<img width="200" height="200" *ngIf="testImageSrc$|async" [src]="testImageSrc$|async" alt="">
