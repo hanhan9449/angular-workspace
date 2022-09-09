@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'projects/shared/src/public-api';
+import { AuthService } from 'shared/src/public-api';
 import { from, Observable } from 'rxjs';
 import { PostService } from './post.service';
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CONSTANTS } from 'projects/shared/src/constants';
+import { CONSTANTS } from 'shared/src/public-api';
 import { of, Subject } from 'rxjs';
 import { navItemList } from './nav-item.list.config';
 

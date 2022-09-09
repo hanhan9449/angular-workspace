@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
-import { VendorsModule } from 'projects/vendors/src/public-api';
+import { VendorsModule } from 'vendors/src/public-api';
 import { FirebaseUIModule } from 'firebaseui-angular';
-import {SharedModule} from "../../../../shared/src/lib/shared.module";
+import {SharedModule} from "shared/src/public-api";
 
 
 @NgModule({
