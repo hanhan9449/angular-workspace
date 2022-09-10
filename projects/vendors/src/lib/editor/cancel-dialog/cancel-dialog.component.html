@@ -3,6 +3,6 @@
     你所做的更改将不会被保存
 </div>
 <div mat-dialog-actions>
-    <button mat-button>再想想</button>
-    <button mat-button color="warn" [mat-dialog-close]="null">退出</button>
+    <button mat-button [mat-dialog-close]="'cancel'">再想想</button>
+    <button mat-button color="warn" [mat-dialog-close]="'confirm'">退出</button>
 </div>

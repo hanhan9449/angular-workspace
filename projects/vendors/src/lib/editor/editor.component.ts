@@ -31,7 +31,9 @@ export class EditorComponent implements OnInit {
       width: '250px'
     })
     dialogRef.afterClosed().subscribe(result => {
-      this.cancel.emit()
+      if (result === 'confirm') {
+        this.cancel.emit()
+      }
     })
   }
 
