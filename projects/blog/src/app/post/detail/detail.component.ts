@@ -3,7 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {map, Observable, switchMap, take} from 'rxjs';
 import { PostService } from '../post.service';
 import {PostInterface} from "../post.interface";
-import {AuthService} from "../../../../../shared/src/lib/auth/auth.service";
+import {AuthService} from "../../../../../service/src/lib/auth.service";
 import {MatDialog} from "@angular/material/dialog";
 import {DeleteDialogComponent} from "./delete-dialog/delete-dialog.component";
 import {MatSnackBar} from "@angular/material/snack-bar";

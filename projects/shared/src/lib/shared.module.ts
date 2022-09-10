@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
-import { SharedComponent } from './shared.component';
-import { TitleDirective } from './title/title.directive';
-import { DebugDirective } from './debug/debug.directive';
+import { TitleDirective } from './title.directive';
+import { DebugDirective } from './debug.directive';
 import { MediaQueryIfDirective } from './media-query-if.directive';
 
 
 
 @NgModule({
   declarations: [
-    SharedComponent,
     TitleDirective,
     DebugDirective,
     MediaQueryIfDirective
@@ -16,7 +14,6 @@ import { MediaQueryIfDirective } from './media-query-if.directive';
   imports: [
   ],
   exports: [
-    SharedComponent,
     TitleDirective,
     DebugDirective,
     MediaQueryIfDirective

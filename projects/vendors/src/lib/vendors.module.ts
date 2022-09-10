@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { VendorsComponent } from './vendors.component';
 import {MatButtonModule} from '@angular/material/button';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -21,7 +20,6 @@ import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
-    VendorsComponent,
     HeaderComponent,
     FooterComponent,
     PageContainerComponent
@@ -43,7 +41,6 @@ import {MatIconModule} from "@angular/material/icon";
     MatIconModule
   ],
   exports: [
-    VendorsComponent,
     HeaderComponent,
     FooterComponent,
     PageContainerComponent,
