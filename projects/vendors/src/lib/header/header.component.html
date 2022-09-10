@@ -14,21 +14,21 @@
         <nav *libMediaQueryIf="{min: '500px'};else: smallScreen">
             <ul class="navList">
                 <li *ngFor="let it of navItemList$|async" >
-                    <button mat-button [routerLink]="it.href"  >
+                    <button mat-button [routerLink]="it.href" #menu >
                         {{it.name}}
                     </button>
                 </li>
             </ul>
         </nav>
         <ng-template #smallScreen>
-          <button mat-icon-button>
-            <mat-icon fontIcon="menu"></mat-icon>
+           <button #menu data-menu-icon mat-icon-button (click)="showNavList = !showNavList">
+            <mat-icon fontIcon="menu" class="menu-icon"></mat-icon>
           </button>
         </ng-template>
       </div>
     </mat-toolbar>
   <nav *libMediaQueryIf="{max: '500px'}">
-    <mat-list class="nav-list">
+    <mat-list class="nav-list" *ngIf="showNavList">
       <mat-list-item
         class="nav-item"
         *ngFor="let it of navItemList$|async" [routerLink]="it.href">
