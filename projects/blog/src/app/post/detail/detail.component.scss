@@ -4,3 +4,13 @@
     display: flex;
     gap: 1rem;
 }
+
+.title-section {
+  display: flex;
+  align-items: baseline;
+}
+.action-button-group {
+  > * + * {
+    margin-left: 4px;
+  }
+}

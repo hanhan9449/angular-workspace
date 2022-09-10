@@ -1,8 +1,14 @@
 <ng-container [libTitle]="[title, (post$|async)?.title]"></ng-container>
 <section class="post" *ngIf="post$|async as post" >
+  <div class="title-section">
+
     <h3 class="g-title" >{{post.title}}
-      <button mat-raised-button color="warn" (click)="deleteButtonClick()">删除文章</button>
     </h3>
+    <div *ngIf="isAdmin$|async" class="action-button-group">
+      <button mat-raised-button >编辑文章</button>
+      <button mat-raised-button color="warn" (click)="deleteButtonClick()">删除文章</button>
+    </div>
+  </div>
     <div class="info-panel">
       <ng-container *ngIf="!post.modifiedAt"
                     logMode="warn"
