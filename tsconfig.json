@@ -23,6 +23,9 @@
       "dom"
     ],
     "paths": {
+      "service": [
+        "dist/service"
+      ],
       "shared": [
         "dist/shared"
       ],
