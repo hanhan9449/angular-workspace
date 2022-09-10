@@ -1,0 +1,10 @@
+{
+  "name": "blog",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "ng serve",
+    "build": "ng build"
+  },
+  "dependencies": {
+  }
+}
