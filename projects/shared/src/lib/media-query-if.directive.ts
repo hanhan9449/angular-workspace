@@ -24,10 +24,10 @@ export class MediaQueryIfDirective implements AfterViewInit, AfterViewChecked {
     // let mql = window.matchMedia('(max-width: 600px)');
     let query = []
     if (this.mediaQuery.max) {
-      query.push(`(min-width: ${this.mediaQuery.max})`)
+      query.push(`(max-width: ${this.mediaQuery.max})`)
     }
     if (this.mediaQuery.min) {
-      query.push(`(max-width: ${this.mediaQuery.min})`)
+      query.push(`(min-width: ${this.mediaQuery.min})`)
     }
     let queryStr = query.join('and')
     return getMediaQueryResult$(queryStr)
