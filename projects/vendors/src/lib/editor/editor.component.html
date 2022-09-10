@@ -7,7 +7,10 @@
     </mat-form-field>
     <mat-form-field class="content" appearance="fill">
         <mat-label>内容</mat-label>
-        <textarea #content matInput [value]="post?.content ?? ''" (input)="handleInput('content', content.value)"></textarea>
+        <textarea
+          cdkTextareaAutosize
+          [style.min-height]="'8rem'"
+          #content matInput [value]="post?.content ?? ''" (input)="handleInput('content', content.value)"></textarea>
     </mat-form-field>
     <div class="button-panel">
 

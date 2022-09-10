@@ -1,1 +1,7 @@
-<p>edit works!</p>
+<h2
+  class="g-title"
+  [libTitle]="[title, post?.title]">{{title}}</h2>
+
+<ng-container *ngIf="post">
+  <lib-editor [(post)]="post" (submit)="handleSubmit()" (cancel)="handleCancel()"></lib-editor>
+</ng-container>
