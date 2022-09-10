@@ -18,5 +18,10 @@
 .navList {
     display: flex;
     list-style-type: none;
-    padding: none;
+    padding: 0;
+}
+.nav-section {
+  margin-left: auto;
+  display: flex;
+  align-items: baseline;
 }

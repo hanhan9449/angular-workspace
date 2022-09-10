@@ -10,7 +10,8 @@
                 [hidden]="hideSubtitle"
             >{{subtitle}}</div>
         </div>
-        <nav *libMediaQueryIf="{min: '500px'}">
+      <div class="nav-section">
+        <nav *libMediaQueryIf="{min: '500px'};else: smallScreen">
             <ul class="navList">
                 <li *ngFor="let it of navItemList$|async" >
                     <button mat-button [routerLink]="it.href"  >
@@ -18,7 +19,12 @@
                     </button>
                 </li>
             </ul>
-
         </nav>
+        <ng-template #smallScreen>
+          <button mat-icon-button>
+            <mat-icon fontIcon="menu"></mat-icon>
+          </button>
+        </ng-template>
+      </div>
     </mat-toolbar>
 </header>
