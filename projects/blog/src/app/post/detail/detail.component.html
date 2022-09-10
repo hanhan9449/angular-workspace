@@ -5,7 +5,7 @@
     <h3 class="g-title" >{{post.title}}
     </h3>
     <div *ngIf="isAdmin$|async" class="action-button-group">
-      <button mat-raised-button >编辑文章</button>
+      <button mat-raised-button (click)="editButtonClick()">编辑文章</button>
       <button mat-raised-button color="warn" (click)="deleteButtonClick()">删除文章</button>
     </div>
   </div>

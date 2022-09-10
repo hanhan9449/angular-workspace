@@ -55,5 +55,10 @@ export class DetailComponent implements OnInit {
     })
 
   }
+  editButtonClick(): void {
+    this.postId$?.pipe(take(1)).subscribe(postId => {
+      this.router.navigate(['post/edit', postId])
+    })
+  }
 
 }
