@@ -6,5 +6,6 @@
     "build": "ng build"
   },
   "dependencies": {
+    "service": "*"
   }
 }

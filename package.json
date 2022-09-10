@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "lerna run start --scope=blog --stream",
+    "build": "lerna run build --scope={blog,service} --stream",
+    "buildlib": "lerna run build --scope=service --stream",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
