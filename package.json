@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "lerna run start --scope=blog --stream",
-    "build": "lerna run build --scope={blog,service} --stream",
-    "buildlib": "lerna run build --scope=service --stream",
+    "build:blog": "lerna run build --scope=blog",
+    "build:service": "lerna run build --scope=service",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -47,6 +47,7 @@
     "karma-jasmine-html-reporter": "~2.0.0",
     "lerna": "^5.5.1",
     "ng-packagr": "^14.2.0",
+    "nx": "^14.7.3",
     "typescript": "~4.7.2"
   },
   "workspaces": [
