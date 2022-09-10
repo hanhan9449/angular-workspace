@@ -6,6 +6,10 @@
     "@angular/core": "^14.0.0"
   },
   "dependencies": {
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "shared": "*"
+  },
+  "scripts": {
+    "build": "ng-packagr"
   }
 }

@@ -13,7 +13,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
-import { SharedModule } from '../../../shared/src/public-api'
+import { SharedModule } from 'shared'
 import {MatIconModule} from "@angular/material/icon";
 
 

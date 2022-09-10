@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { PostInterface } from 'projects/blog/src/app/post/post.interface';
+import { PostInterface } from 'shared';
 import { CancelDialogComponent } from './cancel-dialog/cancel-dialog.component';
 
 @Component({

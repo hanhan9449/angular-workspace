@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { VendorsModule } from 'projects/vendors/src/public-api';
+import { VendorsModule } from 'vendors';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment, firebaseUiAuthConfig } from '../environments/environment';
 import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';

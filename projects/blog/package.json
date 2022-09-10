@@ -6,6 +6,9 @@
     "build": "ng build"
   },
   "dependencies": {
-    "service": "*"
+    "service": "*",
+    "shared": "*",
+    "tools": "*",
+    "vendors": "*"
   }
 }

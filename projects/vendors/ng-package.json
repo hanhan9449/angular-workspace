@@ -3,5 +3,6 @@
   "dest": "../../dist/vendors",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": ["shared"]
 }

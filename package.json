@@ -4,8 +4,14 @@
   "scripts": {
     "ng": "ng",
     "start": "lerna run start --scope=blog --stream",
+    "build": "npm run build:blog",
+    "// 1": "build angular application",
     "build:blog": "lerna run build --scope=blog",
+    "// 2": "build angular library",
     "build:service": "lerna run build --scope=service",
+    "build:shared": "lerna run build --scope=shared",
+    "build:tools": "lerna run build --scope=tools",
+    "build:vendors": "lerna run build --scope=vendors",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { ToolsRoutingModule } from './tools-routing.module';
 import { QrCodeComponent } from './qr-code/qr-code.component';
-import { VendorsModule } from 'projects/vendors/src/public-api';
-import { QrCodeModule } from 'projects/tools/src/lib/qr-code/qr-code.module';
+import { VendorsModule } from 'vendors';
+import { QrCodeModule } from 'tools';
 import { ToolsComponent } from './tools.component';
-import {SharedModule} from "../../../../shared/src/lib/shared.module";
+import {SharedModule} from "shared";
 
 
 @NgModule({

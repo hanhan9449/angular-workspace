@@ -2,7 +2,7 @@ import { Component, ContentChild, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PostInterface } from '../post.interface';
+import { PostInterface } from 'shared';
 import { PostService } from '../post.service';
 
 @Component({

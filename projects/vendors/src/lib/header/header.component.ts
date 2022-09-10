@@ -1,5 +1,5 @@
 import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
-import { CONSTANTS } from 'projects/shared/src/constants';
+import { WebsiteEnum } from 'shared';
 import { of, Subject } from 'rxjs';
 import { navItemList } from './nav-item.list.config';
 
@@ -11,8 +11,8 @@ import { navItemList } from './nav-item.list.config';
 export class HeaderComponent implements OnInit {
   @ViewChild('menu', {read: ElementRef, static: false}) menuEl?: ElementRef<HTMLButtonElement>
 
-  title = CONSTANTS.WEBSITE_TITLE
-  subtitle = CONSTANTS.WEBSITE_SUBTITLE
+  title = WebsiteEnum.WEBSITE_TITLE
+  subtitle = WebsiteEnum.WEBSITE_SUBTITLE
   hideSubtitle = true
   navItemList$ = of(navItemList)
   showNavList = false
