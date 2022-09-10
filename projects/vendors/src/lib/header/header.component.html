@@ -27,4 +27,18 @@
         </ng-template>
       </div>
     </mat-toolbar>
+  <nav *libMediaQueryIf="{max: '500px'}">
+    <mat-list class="nav-list">
+      <mat-list-item
+        class="nav-item"
+        *ngFor="let it of navItemList$|async" [routerLink]="it.href">
+        <div matLine>
+
+          {{it.name}}
+        </div>
+        <mat-icon class="arrow-icon" fontIcon="arrow_forward_ios"></mat-icon>
+
+      </mat-list-item>
+    </mat-list>
+  </nav>
 </header>
