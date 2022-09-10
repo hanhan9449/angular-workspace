@@ -7,7 +7,7 @@ import {PostService} from "service";
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
-  title = '关于我'
+  title = '关于我和更多'
 
   constructor(
     private postService: PostService
