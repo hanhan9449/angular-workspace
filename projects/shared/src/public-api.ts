@@ -10,3 +10,5 @@ export * from './constants'
 export * from './lib/auth/auth.module'
 export * from './lib/auth/auth.service'
 export * from './lib/title/title.directive'
+
+export * from './lib/media-query-if.directive'

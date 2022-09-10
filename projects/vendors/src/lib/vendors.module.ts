@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
+import { SharedModule } from '../../../shared/src/public-api'
 
 
 
@@ -36,7 +37,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar'
     FormsModule,
     ReactiveFormsModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    SharedModule
   ],
   exports: [
     VendorsComponent,
