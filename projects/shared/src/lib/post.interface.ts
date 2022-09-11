@@ -1,4 +1,6 @@
-export interface PostInterface {
+import {EditorDataInterface} from "./editor-data.interface";
+
+export interface PostInterface extends EditorDataInterface {
   id: string;
   title: string;
   author?: string;

@@ -13,7 +13,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 export class EditComponent implements OnInit {
   title = '编辑文章'
   postId$?: Observable<string>
-  post?: Partial<PostInterface>
+  post?: PostInterface
 
   constructor(
     private route: ActivatedRoute,

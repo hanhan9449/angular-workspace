@@ -10,7 +10,7 @@ export class PostService<T> {
 
   constructor(
     public _firestore: Firestore,
-    @Inject(POST_NAMESPACE) public namespace: string
+    @Inject(POST_NAMESPACE) public namespace: string,
   ) {
     if (!namespace) {
       console.error('没有POST_NAMESPACE provide')

@@ -2,7 +2,7 @@ import { Component, ContentChild, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PostInterface } from 'shared';
+import {EditorDataInterface, PostInterface} from 'shared';
 import { PostService } from '../post.service';
 
 @Component({
@@ -13,7 +13,7 @@ import { PostService } from '../post.service';
 export class NewComponent implements OnInit {
 
   title = '新建文章'
-  post: Partial<PostInterface> = {}
+  post: EditorDataInterface = {title: '', content: ''}
 
   constructor(private postService: PostService,
     private route: ActivatedRoute,
