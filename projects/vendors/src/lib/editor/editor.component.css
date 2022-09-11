@@ -8,3 +8,14 @@
     gap: 8px;
     display: flex;
 }
+
+.container {
+  display: flex;
+}
+.edit-section {
+  flex: 1 1 100%;
+}
+.preview-section {
+  padding-left: 1rem;
+  flex: 1 0 50%;
+}

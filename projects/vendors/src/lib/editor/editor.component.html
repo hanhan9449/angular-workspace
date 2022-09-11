@@ -1,20 +1,27 @@
+<div class="container">
+    <section class="edit-section" >
+      <mat-form-field class="title1" appearance="fill">
+          <mat-label>标题</mat-label>
+          <input #title matInput [value]="post?.title ?? ''" (input)="handleInput('title', title.value)">
+      </mat-form-field>
+      <mat-form-field class="content" appearance="fill">
+          <mat-label>内容</mat-label>
+          <textarea
+            cdkTextareaAutosize
+            [style.min-height]="'8rem'"
+            #content matInput [value]="post?.content ?? ''" (input)="handleInput('content', content.value)"></textarea>
+      </mat-form-field>
+      <div class="button-panel">
 
-    <section class="form" >
+      <button mat-raised-button color="primary" (click)="submit.emit()">保存发布</button>
+      <button mat-raised-button (click)="handleCancel()">取消</button>
+      </div>
+  </section>
+  <ng-container *ngIf="needPreview">
 
-    <mat-form-field class="title1" appearance="fill">
-        <mat-label>标题</mat-label>
-        <input #title matInput [value]="post?.title ?? ''" (input)="handleInput('title', title.value)">
-    </mat-form-field>
-    <mat-form-field class="content" appearance="fill">
-        <mat-label>内容</mat-label>
-        <textarea
-          cdkTextareaAutosize
-          [style.min-height]="'8rem'"
-          #content matInput [value]="post?.content ?? ''" (input)="handleInput('content', content.value)"></textarea>
-    </mat-form-field>
-    <div class="button-panel">
-
-    <button mat-raised-button color="primary" (click)="submit.emit()">保存发布</button>
-    <button mat-raised-button (click)="handleCancel()">取消</button>
-    </div>
-</section>
+    <section *libMediaQueryIf="{min: '780px'}" class="preview-section">
+      <h3 class="g-title">{{post?.title}}</h3>
+      <markdown [data]="post?.content"></markdown>
+    </section>
+  </ng-container>
+</div>

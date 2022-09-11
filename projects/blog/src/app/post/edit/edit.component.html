@@ -3,5 +3,5 @@
   [libTitle]="[title, post?.title]">{{title}}</h2>
 
 <ng-container *ngIf="post">
-  <lib-editor [(post)]="post" (submit)="handleSubmit()" (cancel)="handleCancel()"></lib-editor>
+  <lib-editor [needPreview]="true" [(post)]="post" (submit)="handleSubmit()" (cancel)="handleCancel()"></lib-editor>
 </ng-container>

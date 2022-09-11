@@ -10,6 +10,7 @@ import {EditorDataInterface} from "shared/src/lib/editor-data.interface";
 })
 export class EditorComponent<T extends EditorDataInterface> implements OnInit {
   @Input() post?: T
+  @Input() needPreview?: boolean = false
   @Output() postChange = new EventEmitter<T>()
   @Output() submit = new EventEmitter()
   @Output() cancel = new EventEmitter()
