@@ -16,6 +16,7 @@ import { FirebaseUIModule } from 'firebaseui-angular';
 import { AngularFireModule, FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { initializeAppCheck, provideAppCheck, ReCaptchaV3Provider } from '@angular/fire/app-check';
 import {MarkdownModule} from "ngx-markdown";
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,13 @@ import {MarkdownModule} from "ngx-markdown";
 
     }),
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),
-    MarkdownModule.forRoot()
+    MarkdownModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [
     ScreenTrackingService,UserTrackingService,
