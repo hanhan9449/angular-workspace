@@ -1,9 +1,9 @@
-<div class="title-section">
-  <h2 [libTitle]="title" class="g-title">{{title}}</h2>
-  <div *ngIf="isAdmin$|async" class="action-section">
-    <button mat-raised-button color="accent">编辑</button>
+<ng-container *ngIf="post$|async as post">
+  <div class="title-section">
+    <h2 [libTitle]="post.title" class="g-title">{{post.title}}</h2>
+    <div *ngIf="isAdmin$|async" class="action-section">
+      <button mat-raised-button color="accent" (click)="handleEditClick()">编辑</button>
+    </div>
   </div>
-</div>
-<!--<markdown *ngIf="content$|async as content" [data]="'111'"></markdown>-->
-
-<markdown data="123"></markdown>
+  <markdown  [data]="post.content"></markdown>
+</ng-container>

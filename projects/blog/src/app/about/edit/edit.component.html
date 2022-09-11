@@ -1,0 +1,2 @@
+<h2 class="g-title" [libTitle]="title">{{title}}</h2>
+<lib-editor *ngIf="post" [(post)]="post" (submit)="handleSubmit()" (cancel)="handleCancel()"></lib-editor>

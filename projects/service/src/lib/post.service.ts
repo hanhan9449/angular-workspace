@@ -1,9 +1,10 @@
 import {Inject, Injectable, InjectionToken} from '@angular/core';
-import {doc, Firestore, getDoc} from "@angular/fire/firestore";
+import {doc, Firestore, getDoc, updateDoc} from "@angular/fire/firestore";
 import {from, Observable} from "rxjs";
+import {DocumentReference} from "@angular/fire/compat/firestore";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'any'
 })
 export class PostService<T> {
 
@@ -11,6 +12,9 @@ export class PostService<T> {
     public _firestore: Firestore,
     @Inject(POST_NAMESPACE) public namespace: string
   ) {
+    if (!namespace) {
+      console.error('没有POST_NAMESPACE provide')
+    }
   }
 
   getOneById$(postId: string): Observable<T|undefined> {
@@ -19,6 +23,15 @@ export class PostService<T> {
     return from(detail)
   }
 
+  async updatePostById(postId: string, post: Partial<T>) {
+    if (!postId) {
+      console.error('updatePostById', '没有传postId进来')
+      return
+    }
+    console.debug('updatePostById', post)
+    const currentPost = doc(this._firestore, this.namespace, postId)
+    await updateDoc<any>(currentPost, post);
+  }
 
 
 }
