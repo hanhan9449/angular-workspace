@@ -3,20 +3,17 @@
     "default": {
       "runner": "nx/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build:*"]
+        "cacheableOperations": ["^build"]
       }
     },
     "targetDefaults": {
-      "build:blog": {
-        "dependOn": ["build:service", "build:vendors", "build:tools", "build:shared"]
+      "^build:3": {
+        "dependOn": ["^build:1","^build:2"]
       },
-      "build:vendors": {
-        "dependOn": ["build:shared"]
-      },
-
-      "build:tools": {
-        "dependOn": ["build:shared"]
+      "^build:2": {
+        "dependOn": ["^build:1"]
       }
+
     }
   }
 }
