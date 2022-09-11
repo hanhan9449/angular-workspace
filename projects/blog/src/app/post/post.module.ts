@@ -26,7 +26,7 @@ import { DeleteDialogComponent } from './detail/delete-dialog/delete-dialog.comp
     VendorsModule,
     PostRoutingModule,
     AuthModule,
-    MarkdownModule.forRoot(),
+    MarkdownModule.forChild(),
     EditorModule,
     SharedModule
   ]

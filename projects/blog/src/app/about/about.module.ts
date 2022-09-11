@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { AboutComponent } from './about.component';
 import { AboutRoutingModule } from './about-routing.module';
 import {SharedModule} from "shared";
+import {VendorsModule} from "vendors";
+import {MarkdownModule} from "ngx-markdown";
 
 
 
@@ -13,7 +15,9 @@ import {SharedModule} from "shared";
   imports: [
     CommonModule,
     AboutRoutingModule,
-    SharedModule
+    SharedModule,
+    VendorsModule,
+    MarkdownModule.forChild()
   ]
 })
 export class AboutModule { }

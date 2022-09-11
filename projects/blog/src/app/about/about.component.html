@@ -1,1 +1,9 @@
-<p [libTitle]="title">about works!</p>
+<div class="title-section">
+  <h2 [libTitle]="title" class="g-title">{{title}}</h2>
+  <div *ngIf="isAdmin$|async" class="action-section">
+    <button mat-raised-button color="accent">编辑</button>
+  </div>
+</div>
+<!--<markdown *ngIf="content$|async as content" [data]="'111'"></markdown>-->
+
+<markdown data="123"></markdown>

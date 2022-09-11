@@ -15,6 +15,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 import { FirebaseUIModule } from 'firebaseui-angular';
 import { AngularFireModule, FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { initializeAppCheck, provideAppCheck, ReCaptchaV3Provider } from '@angular/fire/app-check';
+import {MarkdownModule} from "ngx-markdown";
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { initializeAppCheck, provideAppCheck, ReCaptchaV3Provider } from '@angul
       return initializeAppCheck(undefined, {provider, isTokenAutoRefreshEnabled: true})
 
     }),
-    FirebaseUIModule.forRoot(firebaseUiAuthConfig)
+    FirebaseUIModule.forRoot(firebaseUiAuthConfig),
+    MarkdownModule.forRoot()
   ],
   providers: [
     ScreenTrackingService,UserTrackingService,

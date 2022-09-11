@@ -7,6 +7,7 @@
     "build": "npm run build:3:blog",
     "build:3:blog": "lerna run build --scope=blog",
     "build:2:service": "lerna run build --scope=service",
+    "build:-1:service": "npm run build:2:service -- -- --watch",
     "build:1:shared": "lerna run build --scope=shared",
     "build:2:tools": "lerna run build --scope=tools",
     "build:2:vendors": "lerna run build --scope=vendors",
