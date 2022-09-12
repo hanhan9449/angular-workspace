@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
 import {SharedModule} from "shared";
+import {MarkdownModule} from "ngx-markdown";
 
 
 
@@ -13,7 +14,8 @@ import {SharedModule} from "shared";
   imports: [
     CommonModule,
     HomeRoutingModule,
-    SharedModule
+    SharedModule,
+    MarkdownModule.forChild()
   ]
 })
 export class HomeModule { }
