@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { TitleDirective } from './title.directive';
 import { DebugDirective } from './debug.directive';
 import { MediaQueryIfDirective } from './media-query-if.directive';
+import { IsEmptyPipe } from './is-empty.pipe';
 
 
 
@@ -9,14 +10,16 @@ import { MediaQueryIfDirective } from './media-query-if.directive';
   declarations: [
     TitleDirective,
     DebugDirective,
-    MediaQueryIfDirective
+    MediaQueryIfDirective,
+    IsEmptyPipe
   ],
   imports: [
   ],
   exports: [
     TitleDirective,
     DebugDirective,
-    MediaQueryIfDirective
+    MediaQueryIfDirective,
+    IsEmptyPipe
   ]
 })
 export class SharedModule { }

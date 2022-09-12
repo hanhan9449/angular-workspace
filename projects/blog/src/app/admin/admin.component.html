@@ -1,4 +1,15 @@
-<p [libTitle]="title">admin works!</p>
+<p [libTitle]="title" class="g-title">{{title}}</p>
 
-<button mat-button (click)="signIn()">sign-in</button>
-<firebase-ui></firebase-ui>
+<div *ngIf="(isSignIn$|async|isEmpty:false);else:getStatus">
+<button
+  *ngIf="isSignIn$|async;else:tSignIn"
+  mat-button (click)="signOut()">sign out</button>
+</div>
+<ng-template #getStatus>
+  <p>获取登录状态中</p>
+</ng-template>
+
+<ng-template #tSignIn>
+<button
+  mat-button (click)="signIn()">sign in</button>
+</ng-template>
