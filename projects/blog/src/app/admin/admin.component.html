@@ -1,7 +1,5 @@
 <p [libTitle]="title" class="g-title">{{title}}</p>
 
-<firebase-ui></firebase-ui>
-
 <button
   *ngIf="isSignIn$|async;else:tSignIn"
   mat-button (click)="signOut()">sign out</button>
