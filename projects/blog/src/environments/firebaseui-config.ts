@@ -6,6 +6,8 @@ export const firebaseUiAuthConfig: firebaseui.auth.Config = {
     signInOptions: [
         firebase.auth.EmailAuthProvider.PROVIDER_ID,
         firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+      firebase.auth.GithubAuthProvider.PROVIDER_ID,
+      firebase.auth.PhoneAuthProvider.PROVIDER_ID
     ],
     credentialHelper: firebaseui.auth.CredentialHelper.GOOGLE_YOLO
 }
