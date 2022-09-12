@@ -1,8 +1,8 @@
 <h3 mat-dialog-title>选择登录方式</h3>
 <div mat-dialog-content class="content">
   <firebase-ui
-    (signInSuccessWithAuthResult)="handleSuccess()"
-    (signInFailure)="handleFailure()"
+    (signInSuccessWithAuthResult)="handleSuccess($event)"
+    (signInFailure)="handleFailure($event)"
   ></firebase-ui>
 </div>
 <div mat-dialog-actions>
