@@ -1,4 +1,12 @@
-<p [libTitle]="title">admin works!</p>
+<p [libTitle]="title" class="g-title">{{title}}</p>
 
-<button mat-button (click)="signIn()">sign-in</button>
 <firebase-ui></firebase-ui>
+
+<button
+  *ngIf="isSignIn$|async;else:tSignIn"
+  mat-button (click)="signOut()">sign out</button>
+
+<ng-template #tSignIn>
+<button
+  mat-button (click)="signIn()">sign in</button>
+</ng-template>
