@@ -6,11 +6,13 @@ import { AdminComponent } from './admin.component';
 import { VendorsModule } from 'vendors';
 import { FirebaseUIModule } from 'firebaseui-angular';
 import {SharedModule} from "shared";
+import { SignInDialogComponent } from './sign-in-dialog/sign-in-dialog.component';
 
 
 @NgModule({
   declarations: [
-    AdminComponent
+    AdminComponent,
+    SignInDialogComponent
   ],
   imports: [
     CommonModule,
