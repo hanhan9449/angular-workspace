@@ -9,6 +9,7 @@
     "build:2:service": "lerna run build --scope=service",
     "build:-1:service": "npm run build:2:service -- -- --watch",
     "build:1:shared": "lerna run build --scope=shared",
+    "build:-1:shared": "npm run build:1:shared -- -- --watch",
     "build:2:tools": "lerna run build --scope=tools",
     "build:2:vendors": "lerna run build --scope=vendors",
     "watch": "lerna run watch --scope={vendors,shared,service,tools} --parallel",

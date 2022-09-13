@@ -17,10 +17,12 @@ import { AngularFireModule, FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { initializeAppCheck, provideAppCheck, ReCaptchaV3Provider } from '@angular/fire/app-check';
 import {MarkdownModule} from "ngx-markdown";
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { NoAuthComponent } from './no-auth/no-auth.component';
+import {SharedModule} from "shared";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,7 @@ import { DetailComponent } from "./detail/detail.component";
 import { EditComponent } from "./edit/edit.component";
 import { NewComponent } from "./new/new.component";
 import { PostComponent } from "./post.component";
+import {IsAdminGuard} from "shared";
 
 const routes: Routes = [
     {
@@ -16,11 +17,13 @@ const routes: Routes = [
     },
     {
         path: 'edit/:id',
-        component: EditComponent
+        component: EditComponent,
+        canActivate: [IsAdminGuard]
     },
     {
         path: 'new',
-        component: NewComponent
+        component: NewComponent,
+        canActivate: [IsAdminGuard]
     }
 ]
 

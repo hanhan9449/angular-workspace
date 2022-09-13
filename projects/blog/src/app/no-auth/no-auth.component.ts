@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Router} from "@angular/router";
+import {CommonModule} from "@angular/common";
 import {SharedModule} from "shared";
 import {VendorsModule} from "vendors";
-import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-not-found',
+  selector: 'app-no-auth',
   standalone: true,
   imports: [CommonModule, SharedModule, VendorsModule],
-  templateUrl: './not-found.component.html',
-  styleUrls: ['./not-found.component.scss']
+  templateUrl: './no-auth.component.html',
+  styleUrls: ['./no-auth.component.scss']
 })
-export class NotFoundComponent implements OnInit {
-  title = '啊哦，这里什么都没有～(404)'
+export class NoAuthComponent implements OnInit {
+  title = '你来到了一个不属于你的领域(401)'
+
   time = 10000
 
   constructor(
@@ -23,8 +24,7 @@ export class NotFoundComponent implements OnInit {
   }
 
   navigatorToHome(): void {
-    this.router.navigate([''])
-
+    this.router.navigate(['/'])
   }
 
 }
