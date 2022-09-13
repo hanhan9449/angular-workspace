@@ -28,6 +28,10 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'no-auth',
+    loadComponent: () => import('./no-auth/no-auth.component').then(m => m.NoAuthComponent)
+  },
+  {
     path: '**',
     loadComponent: () => import('./not-found/not-found.component').then(m => m.NotFoundComponent)
   }

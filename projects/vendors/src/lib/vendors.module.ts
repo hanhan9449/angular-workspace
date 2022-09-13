@@ -15,6 +15,7 @@ import { MatDialogModule } from '@angular/material/dialog'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
 import { SharedModule } from 'shared'
 import {MatIconModule} from "@angular/material/icon";
+import { TimerComponent } from './timer/timer.component';
 
 
 
@@ -22,7 +23,8 @@ import {MatIconModule} from "@angular/material/icon";
   declarations: [
     HeaderComponent,
     FooterComponent,
-    PageContainerComponent
+    PageContainerComponent,
+    TimerComponent
   ],
   imports: [
     MatButtonModule,
@@ -55,7 +57,8 @@ import {MatIconModule} from "@angular/material/icon";
     ReactiveFormsModule,
     MatDialogModule,
     MatSnackBarModule,
-    MatIconModule
+    MatIconModule,
+    TimerComponent
 
   ]
 })
