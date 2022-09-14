@@ -3,7 +3,8 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 @Component({
   selector: 'lib-timer',
   templateUrl: './timer.component.html',
-  styleUrls: ['./timer.component.css']
+  styleUrls: ['./timer.component.css'],
+  standalone: true,
 })
 export class TimerComponent implements OnInit {
   @Input() time?: number
@@ -29,7 +30,7 @@ export class TimerComponent implements OnInit {
     }
     const handler = () => {
       this.dec()
-      this.timerId = setTimeout(handler, 1000)
+      this.timerId = setTimeout(handler, 1000) as unknown as number
       if (this.time === 0) {
         this.isTime.emit()
         clearTimeout(this.timerId)

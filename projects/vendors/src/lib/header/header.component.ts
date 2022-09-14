@@ -1,11 +1,19 @@
 import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
-import { WebsiteEnum } from 'shared';
+import {SharedModule, WebsiteEnum} from 'shared';
 import { of, Subject } from 'rxjs';
 import { navItemList } from './nav-item.list.config';
+import {CommonModule} from "@angular/common";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
+import {MatListModule} from "@angular/material/list";
+import {RouterModule} from "@angular/router";
 
 @Component({
   selector: 'lib-header',
   templateUrl: './header.component.html',
+  standalone: true,
+  imports: [CommonModule, MatToolbarModule, MatButtonModule, MatIconModule, MatListModule, SharedModule, RouterModule],
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
