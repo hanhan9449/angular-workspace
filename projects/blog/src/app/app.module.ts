@@ -19,6 +19,7 @@ import {MarkdownModule} from "ngx-markdown";
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { NoAuthComponent } from './no-auth/no-auth.component';
 import {SharedModule} from "shared";
+import {PerformanceMonitoringService} from "@angular/fire/compat/performance";
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import {SharedModule} from "shared";
   ],
   providers: [
     ScreenTrackingService,UserTrackingService,
+    PerformanceMonitoringService,
     {provide: FIREBASE_OPTIONS, useValue: environment.firebase}
   ],
   bootstrap: [AppComponent]
