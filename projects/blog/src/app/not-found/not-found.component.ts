@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {SharedModule} from "shared";
-import {VendorsModule} from "vendors";
+import {SharedModule} from "@shared";
+import {VendorsModule} from "@vendors";
 import {Router} from "@angular/router";
 
 @Component({

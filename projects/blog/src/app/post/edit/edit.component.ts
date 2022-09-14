@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {PostService} from "../post.service";
 import {map, Observable, switchMap, take} from "rxjs";
-import {PostInterface} from "shared";
+import {PostInterface} from "@shared";
 import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({

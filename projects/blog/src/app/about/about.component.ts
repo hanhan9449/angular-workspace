@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {AuthService, POST_NAMESPACE, PostService} from "service";
+import {AuthService, POST_NAMESPACE, PostService} from "@service";
 import {filter, map, Observable, startWith} from "rxjs";
-import {AboutMeInterface} from "shared/src/lib/about-me.interface";
+import {AboutMeInterface} from "@shared";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({

@@ -29,7 +29,7 @@ export class TimerComponent implements OnInit {
     }
     const handler = () => {
       this.dec()
-      this.timerId = setTimeout(handler, 1000)
+      this.timerId = setTimeout(handler, 1000) as unknown as number
       if (this.time === 0) {
         this.isTime.emit()
         clearTimeout(this.timerId)

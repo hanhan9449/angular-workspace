@@ -1,5 +1,5 @@
 import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
-import { WebsiteEnum } from 'shared';
+import { WebsiteEnum } from '@shared';
 import { of, Subject } from 'rxjs';
 import { navItemList } from './nav-item.list.config';
 

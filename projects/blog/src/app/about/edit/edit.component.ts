@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {PostService} from "service";
-import {AboutMeInterface} from "shared/src/lib/about-me.interface";
+import {PostService} from "@service";
+import {AboutMeInterface} from "@shared";
 import {ActivatedRoute, Router} from "@angular/router";
 import {MatSnackBar} from "@angular/material/snack-bar";
 

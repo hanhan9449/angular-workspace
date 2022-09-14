@@ -4,7 +4,7 @@ import { DetailComponent } from "./detail/detail.component";
 import { EditComponent } from "./edit/edit.component";
 import { NewComponent } from "./new/new.component";
 import { PostComponent } from "./post.component";
-import {IsAdminGuard} from "shared";
+import {IsAdminGuard} from "@shared";
 
 const routes: Routes = [
     {

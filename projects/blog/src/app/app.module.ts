@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { VendorsModule } from 'vendors';
+import { VendorsModule } from '@vendors';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment, firebaseUiAuthConfig } from '../environments/environment';
 import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
@@ -18,7 +18,7 @@ import { initializeAppCheck, provideAppCheck, ReCaptchaV3Provider } from '@angul
 import {MarkdownModule} from "ngx-markdown";
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { NoAuthComponent } from './no-auth/no-auth.component';
-import {SharedModule} from "shared";
+import {SharedModule} from "@shared";
 
 @NgModule({
   declarations: [

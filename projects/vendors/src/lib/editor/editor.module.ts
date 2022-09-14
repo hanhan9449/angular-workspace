@@ -4,7 +4,7 @@ import { EditorComponent } from './editor.component';
 import { VendorsModule } from '../vendors.module';
 import { CancelDialogComponent } from './cancel-dialog/cancel-dialog.component';
 import {MarkdownModule} from "ngx-markdown";
-import {SharedModule} from "shared";
+import {SharedModule} from "@shared";
 
 
 

@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AboutComponent } from "./about.component";
 import {EditComponent} from "./edit/edit.component";
-import {IsAdminGuard} from "shared";
+import {IsAdminGuard} from "@shared";
 
 const routes: Routes = [
     {

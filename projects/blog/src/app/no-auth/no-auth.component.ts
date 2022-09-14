@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {CommonModule} from "@angular/common";
-import {SharedModule} from "shared";
-import {VendorsModule} from "vendors";
+import {SharedModule} from "@shared";
+import {VendorsModule} from "@vendors";
 
 @Component({
   selector: 'app-no-auth',

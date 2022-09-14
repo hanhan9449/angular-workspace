@@ -23,6 +23,18 @@
       "dom"
     ],
     "paths": {
+      "@service": [
+        "projects/service/src/public-api"
+      ],
+      "@shared": [
+        "projects/shared/src/public-api"
+      ],
+      "@tools": [
+        "projects/tools/src/public-api"
+      ],
+      "@vendors": [
+        "projects/vendors/src/public-api",
+      ],
       "service": [
         "dist/service"
       ],

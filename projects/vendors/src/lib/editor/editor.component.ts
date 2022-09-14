@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CancelDialogComponent } from './cancel-dialog/cancel-dialog.component';
-import {EditorDataInterface} from "shared/src/lib/editor-data.interface";
+import {EditorDataInterface} from "@shared";
 
 @Component({
   selector: 'lib-editor',
