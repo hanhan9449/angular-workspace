@@ -3,13 +3,11 @@ import { CommonModule } from '@angular/common';
 import {SharedModule} from "shared";
 import {VendorsModule} from "vendors";
 import {Router} from "@angular/router";
-import {TimerComponent} from "vendors/src/lib/timer/timer.component";
-import {MatButtonModule} from "@angular/material/button";
 
 @Component({
   selector: 'app-not-found',
   standalone: true,
-  imports: [CommonModule, SharedModule, TimerComponent, MatButtonModule],
+  imports: [CommonModule, SharedModule, VendorsModule],
   templateUrl: './not-found.component.html',
   styleUrls: ['./not-found.component.scss']
 })

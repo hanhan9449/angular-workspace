@@ -19,7 +19,6 @@ import {MarkdownModule} from "ngx-markdown";
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { NoAuthComponent } from './no-auth/no-auth.component';
 import {SharedModule} from "shared";
-import {PageContainerComponent} from "vendors/src/lib/page-container/page-container.component";
 
 @NgModule({
   declarations: [
@@ -29,7 +28,7 @@ import {PageContainerComponent} from "vendors/src/lib/page-container/page-contai
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    PageContainerComponent,
+    VendorsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAnalytics(() => getAnalytics()),
     provideAuth(() => getAuth()),

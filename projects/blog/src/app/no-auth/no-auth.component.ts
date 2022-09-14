@@ -3,13 +3,11 @@ import {Router} from "@angular/router";
 import {CommonModule} from "@angular/common";
 import {SharedModule} from "shared";
 import {VendorsModule} from "vendors";
-import {TimerComponent} from "vendors/src/lib/timer/timer.component";
-import {MatButtonModule} from "@angular/material/button";
 
 @Component({
   selector: 'app-no-auth',
   standalone: true,
-  imports: [CommonModule, SharedModule, MatButtonModule, TimerComponent],
+  imports: [CommonModule, SharedModule, VendorsModule],
   templateUrl: './no-auth.component.html',
   styleUrls: ['./no-auth.component.scss']
 })
