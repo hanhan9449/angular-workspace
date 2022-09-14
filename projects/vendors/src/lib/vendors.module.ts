@@ -20,12 +20,7 @@ import { TimerComponent } from './timer/timer.component';
 
 
 @NgModule({
-  declarations: [
-    HeaderComponent,
-    FooterComponent,
-    PageContainerComponent,
-    TimerComponent
-  ],
+  declarations: [ ],
   imports: [
     MatButtonModule,
     MatToolbarModule,
@@ -43,9 +38,6 @@ import { TimerComponent } from './timer/timer.component';
     MatIconModule
   ],
   exports: [
-    HeaderComponent,
-    FooterComponent,
-    PageContainerComponent,
     MatButtonModule,
     MatToolbarModule,
     MatListModule,
@@ -58,7 +50,6 @@ import { TimerComponent } from './timer/timer.component';
     MatDialogModule,
     MatSnackBarModule,
     MatIconModule,
-    TimerComponent
 
   ]
 })
