@@ -39,7 +39,6 @@ import {SharedModule} from "@shared";
       return initializeAppCheck(undefined, {provider, isTokenAutoRefreshEnabled: true})
 
     }),
-    FirebaseUIModule.forRoot(firebaseUiAuthConfig),
     MarkdownModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
