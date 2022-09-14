@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { VendorsModule } from '@vendors';
+import {FooterComponent, HeaderComponent, PageContainerComponent, VendorsModule} from '@vendors';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment, firebaseUiAuthConfig } from '../environments/environment';
 import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
@@ -28,7 +28,6 @@ import {SharedModule} from "@shared";
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    VendorsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAnalytics(() => getAnalytics()),
     provideAuth(() => getAuth()),
@@ -47,7 +46,8 @@ import {SharedModule} from "@shared";
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    PageContainerComponent
   ],
   providers: [
     ScreenTrackingService,UserTrackingService,
