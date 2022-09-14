@@ -24,7 +24,6 @@ import { TimerComponent } from './timer/timer.component';
     HeaderComponent,
     FooterComponent,
     PageContainerComponent,
-    TimerComponent
   ],
   imports: [
     MatButtonModule,
@@ -58,7 +57,6 @@ import { TimerComponent } from './timer/timer.component';
     MatDialogModule,
     MatSnackBarModule,
     MatIconModule,
-    TimerComponent
 
   ]
 })
