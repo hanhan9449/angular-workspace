@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { VendorsModule } from 'vendors';
+import {FooterComponent, HeaderComponent, PageContainerComponent, VendorsModule} from '@vendors';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment, firebaseUiAuthConfig } from '../environments/environment';
 import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
@@ -18,7 +18,7 @@ import { initializeAppCheck, provideAppCheck, ReCaptchaV3Provider } from '@angul
 import {MarkdownModule} from "ngx-markdown";
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { NoAuthComponent } from './no-auth/no-auth.component';
-import {SharedModule} from "shared";
+import {SharedModule} from "@shared";
 
 @NgModule({
   declarations: [
@@ -28,7 +28,6 @@ import {SharedModule} from "shared";
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    VendorsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAnalytics(() => getAnalytics()),
     provideAuth(() => getAuth()),
@@ -40,14 +39,14 @@ import {SharedModule} from "shared";
       return initializeAppCheck(undefined, {provider, isTokenAutoRefreshEnabled: true})
 
     }),
-    FirebaseUIModule.forRoot(firebaseUiAuthConfig),
     MarkdownModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    PageContainerComponent
   ],
   providers: [
     ScreenTrackingService,UserTrackingService,

@@ -13,7 +13,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
-import { SharedModule } from 'shared'
+import { SharedModule } from '@shared'
 import {MatIconModule} from "@angular/material/icon";
 import { TimerComponent } from './timer/timer.component';
 
@@ -21,10 +21,6 @@ import { TimerComponent } from './timer/timer.component';
 
 @NgModule({
   declarations: [
-    HeaderComponent,
-    FooterComponent,
-    PageContainerComponent,
-    TimerComponent
   ],
   imports: [
     MatButtonModule,
@@ -43,9 +39,6 @@ import { TimerComponent } from './timer/timer.component';
     MatIconModule
   ],
   exports: [
-    HeaderComponent,
-    FooterComponent,
-    PageContainerComponent,
     MatButtonModule,
     MatToolbarModule,
     MatListModule,
@@ -58,7 +51,6 @@ import { TimerComponent } from './timer/timer.component';
     MatDialogModule,
     MatSnackBarModule,
     MatIconModule,
-    TimerComponent
 
   ]
 })

@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
-import { VendorsModule } from 'vendors';
+import { VendorsModule } from '@vendors';
 import { FirebaseUIModule } from 'firebaseui-angular';
-import {SharedModule} from "shared";
+import {SharedModule} from "@shared";
 import { SignInDialogComponent } from './sign-in-dialog/sign-in-dialog.component';
+import {firebaseUiAuthConfig} from "../../environments/firebaseui-config";
 
 
 @NgModule({
@@ -18,8 +19,8 @@ import { SignInDialogComponent } from './sign-in-dialog/sign-in-dialog.component
     CommonModule,
     AdminRoutingModule,
     VendorsModule,
-    FirebaseUIModule,
-    SharedModule
+    SharedModule,
+    FirebaseUIModule.forRoot(firebaseUiAuthConfig),
   ]
 })
 export class AdminModule { }

@@ -5,7 +5,7 @@ import { Storage } from '@angular/fire/storage';
 import { collection, getDocs } from 'firebase/firestore';
 import { getDownloadURL, ref } from 'firebase/storage';
 import {from, Observable, of, take} from 'rxjs';
-import { PostInterface } from 'shared';
+import { PostInterface } from '@shared';
 
 @Injectable({
   providedIn: 'root'
