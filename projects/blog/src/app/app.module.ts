@@ -1,24 +1,21 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule, SecurityContext} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {FooterComponent, HeaderComponent, PageContainerComponent, VendorsModule} from '@vendors';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import { environment, firebaseUiAuthConfig } from '../environments/environment';
-import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
-import { provideAuth,getAuth } from '@angular/fire/auth';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-import { providePerformance,getPerformance } from '@angular/fire/performance';
-import { provideStorage,getStorage } from '@angular/fire/storage';
-import { FirebaseUIModule } from 'firebaseui-angular';
-import { AngularFireModule, FIREBASE_OPTIONS } from '@angular/fire/compat';
-import { initializeAppCheck, provideAppCheck, ReCaptchaV3Provider } from '@angular/fire/app-check';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {PageContainerComponent} from '@vendors';
+import {initializeApp, provideFirebaseApp} from '@angular/fire/app';
+import {environment} from '../environments/environment';
+import {getAnalytics, provideAnalytics, ScreenTrackingService, UserTrackingService} from '@angular/fire/analytics';
+import {getAuth, provideAuth} from '@angular/fire/auth';
+import {getFirestore, provideFirestore} from '@angular/fire/firestore';
+import {getPerformance, providePerformance} from '@angular/fire/performance';
+import {getStorage, provideStorage} from '@angular/fire/storage';
+import {FIREBASE_OPTIONS} from '@angular/fire/compat';
+import {initializeAppCheck, provideAppCheck, ReCaptchaV3Provider} from '@angular/fire/app-check';
 import {MarkdownModule} from "ngx-markdown";
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { NoAuthComponent } from './no-auth/no-auth.component';
-import {SharedModule} from "@shared";
+import {ServiceWorkerModule} from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -39,7 +36,9 @@ import {SharedModule} from "@shared";
       return initializeAppCheck(undefined, {provider, isTokenAutoRefreshEnabled: true})
 
     }),
-    MarkdownModule.forRoot(),
+    MarkdownModule.forRoot({
+      sanitize: SecurityContext.NONE
+    }),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable
