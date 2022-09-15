@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {RouterModule} from "@angular/router";
 import {MatButtonModule} from "@angular/material/button";
 
@@ -9,7 +9,7 @@ import {MatButtonModule} from "@angular/material/button";
   standalone: true,
   imports: []
 })
-export class TimerComponent implements OnInit {
+export class TimerComponent implements OnInit, OnDestroy {
   @Input() time?: number
   @Output() timeChange = new EventEmitter<number>()
   @Output() isTime = new EventEmitter<void>()
@@ -17,6 +17,10 @@ export class TimerComponent implements OnInit {
   timerId?: number
 
   constructor() { }
+
+  ngOnDestroy(): void {
+        clearTimeout(this.timerId)
+    }
 
   dec(): void {
     const now = Date.now()
