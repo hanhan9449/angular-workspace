@@ -16,7 +16,6 @@ export class IsAdminGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     return this.authService.isAdmin$.pipe(map(b => {
-      console.debug('isAdminGuard', b)
       if (b) {
         return b
       }
