@@ -14,8 +14,6 @@ import {MatIconModule} from "@angular/material/icon";
 export class CameraComponentBase implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('video') video?: ElementRef<HTMLVideoElement>
   mediaStream$?: Observable<MediaStream>
-  loading = true
-  error = false
   photoList = [] as string[]
 
   destroy$ = new Subject<void>()
@@ -23,18 +21,16 @@ export class CameraComponentBase implements OnInit, AfterViewInit, OnDestroy {
   constructor() { }
 
   ngOnInit(): void {
-
-    this.mediaStream$ = from(navigator.mediaDevices.getUserMedia({video:{facingMode: 'environment'}, audio:false})).pipe(
-      catchError((e, origin) => (this.error = true,origin)),
-      tap(o => this.loading = false)
-    )
-    this.destroy$.pipe(
-      switchMap(() => this.mediaStream$!)
-    ).subscribe(next => {
-      next.getTracks().forEach(track => track.stop())
-
-    })
-
+    this.mediaStream$ = new Observable<MediaStream>(subscriber => {
+      const media$ = navigator.mediaDevices.getUserMedia({video: true, audio: false})
+      media$.then(
+        m => subscriber.next(m)
+      )
+      return async () => {
+        const media = await media$
+        media.getTracks().forEach(t => t.stop())
+      }
+    }).pipe(takeUntil(this.destroy$))
   }
   ngAfterViewInit() { }
 
