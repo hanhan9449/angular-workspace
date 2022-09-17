@@ -8,7 +8,7 @@ import {
   ViewContainerRef
 } from '@angular/core';
 import {distinctUntilChanged, Observable, of, throttleTime} from "rxjs";
-import {getMediaQueryResult$} from "./media-query";
+import {getMediaQueryResult$} from "../utils/media-query";
 
 @Directive({
   selector: '[libMediaQueryIf]'

@@ -5,8 +5,9 @@ import { ToolsRoutingModule } from './tools-routing.module';
 import { QrCodeComponent } from './qr-code/qr-code.component';
 import { VendorsModule } from '@vendors';
 import { QrCodeModule } from '@tools';
-import { ToolsComponent } from './tools.component';
-import {SharedModule} from "@shared";
+import { ToolsComponent} from './tools.component';
+import {SharedModule, TOOL_ITEM_LIST} from "@shared";
+import {toolList} from "./tool-list";
 
 
 @NgModule({
@@ -20,6 +21,9 @@ import {SharedModule} from "@shared";
     VendorsModule,
     QrCodeModule,
     SharedModule
+  ],
+  providers: [
+    {provide: TOOL_ITEM_LIST, useValue: toolList}
   ]
 })
 export class ToolsModule { }

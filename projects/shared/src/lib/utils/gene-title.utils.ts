@@ -1,4 +1,4 @@
-import {Nullable} from "./title.directive";
+import {Nullable} from "../directive/title.directive";
 
 const titlePrefix = 'hanhan.rich'
 const joinChar = '-'

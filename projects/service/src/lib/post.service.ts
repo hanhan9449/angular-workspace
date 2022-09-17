@@ -2,6 +2,7 @@ import {Inject, Injectable, InjectionToken} from '@angular/core';
 import {doc, Firestore, getDoc, updateDoc} from "@angular/fire/firestore";
 import {from, Observable} from "rxjs";
 import {DocumentReference} from "@angular/fire/compat/firestore";
+import {POST_NAMESPACE} from "@shared";
 
 @Injectable({
   providedIn: 'any'
@@ -36,4 +37,3 @@ export class PostService<T> {
 
 }
 
-export const POST_NAMESPACE = new InjectionToken<string>('post.namespace')

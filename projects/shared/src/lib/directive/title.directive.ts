@@ -1,6 +1,6 @@
 import {AfterViewChecked, Directive, Input, OnInit} from '@angular/core';
 import {Title} from "@angular/platform-browser";
-import {geneTitleUtils} from "./gene-title.utils";
+import {geneTitleUtils} from "../utils/gene-title.utils";
 
 export type Nullable<T> = T | null | undefined
 
