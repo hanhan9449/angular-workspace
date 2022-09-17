@@ -28,7 +28,7 @@
       </div>
     </mat-toolbar>
   <nav *libMediaQueryIf="{max: '500px'}">
-    <mat-list class="nav-list" *ngIf="showNavList">
+    <mat-list class="nav-list" *ngIf="showNavList" @smallScreenList>
       <mat-list-item
         class="nav-item"
         *ngFor="let it of navItemList$|async" [routerLink]="it.href">
