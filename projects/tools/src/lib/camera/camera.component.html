@@ -1,1 +1,28 @@
-<p>camera works!</p>
+
+
+  <section class="media-section">
+    <section class="container">
+    <video
+      class="video"
+      #video
+      [srcObject]="mediaStream$|async"
+      autoplay></video>
+      <div class="action-section">
+        <button mat-button color="primary" (click)="takePhoto(video)">shot</button>
+        <button mat-button  (click)="clearAllPhoto()">clear all</button>
+      </div>
+  </section>
+    <div class="image-gallery">
+      <div class="image" *ngFor="let src of photoList;index as i">
+        <img  [src]="src" class="image">
+        <button mat-icon-button class="image-delete-button" >
+
+          <mat-icon fontIcon="close"
+                    class="image-delete-icon"
+                    (click)="clearByIndex(i)"></mat-icon>
+        </button>
+<!--        <div class="image-delete-icon" (click)="clearByIndex(i)">x</div>-->
+
+      </div>
+    </div>
+</section>
