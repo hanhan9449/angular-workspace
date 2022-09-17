@@ -1,0 +1,49 @@
+:host {
+  display: flex;
+}
+video, img {
+  transform: rotateY(-180deg);
+  max-height: 100%;
+  max-width: 100%;
+}
+.video {
+  width: 320px;
+}
+
+.container {
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+}
+.action-section {
+}
+
+.media-section {
+  display: flex;
+  align-items: flex-start;
+}
+
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+.image {
+  width: 120px;
+  position: relative;
+}
+
+.image-delete-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  line-height: 20px;
+  background-color: rgb(0 0 0 / .2);
+  color: rgb(255 255 255 / .8);
+  border-radius: unset;
+
+}
+.image-delete-icon {
+  font-size: 16px;
+}

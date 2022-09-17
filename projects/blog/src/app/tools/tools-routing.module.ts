@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'qr-code',
     component: QrCodeComponent
+  },
+  {
+    path: 'camera',
+    loadComponent: () => import('./camera/camera.component').then(m => m.CameraComponent)
   }
 ];
 

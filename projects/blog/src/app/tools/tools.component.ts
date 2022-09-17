@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, InjectionToken, OnInit} from '@angular/core';
 import {toolList} from "./tool-list";
+import {TOOL_ITEM_LIST} from "@shared";
+
+
 @Component({
   selector: 'app-tools',
   templateUrl: './tools.component.html',
@@ -11,7 +14,10 @@ export class ToolsComponent implements OnInit {
 
   toolList = toolList
 
-  constructor() { }
+  constructor(
+    @Inject(TOOL_ITEM_LIST) private toolItemList: any[]
+  ) {
+  }
 
   ngOnInit(): void {
   }

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { TitleDirective } from './title.directive';
-import { DebugDirective } from './debug.directive';
-import { MediaQueryIfDirective } from './media-query-if.directive';
-import { IsEmptyPipe } from './is-empty.pipe';
+import { TitleDirective } from './directive/title.directive';
+import { DebugDirective } from './directive/debug.directive';
+import { MediaQueryIfDirective } from './directive/media-query-if.directive';
+import { IsEmptyPipe } from './pipe/is-empty.pipe';
 
 
 
